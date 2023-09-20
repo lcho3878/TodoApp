@@ -6,31 +6,22 @@
 //
 
 import UIKit
-import SnapKit
 
 class ProfilePageViewController: UIViewController {
-
+    private let profileView = ProfilePageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let titleLabel = UILabel()
-        titleLabel.text = "프로필 페이지"
-        view.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.centerX.equalToSuperview()
-        }
-        // Do any additional setup after loading the view.
+        
+        // 사용자 데이터를 생성하고 ViewModel을 초기화합니다.
+        let profile = ProfileModel(name: "이찬호", age: 29)
+        let viewModel = ProfilePageViewModel(profile: profile)
+        // ProfilePageView에 ViewModel을 연결합니다.
+        profileView.viewModel = viewModel
+        
+        // ProfilePageView를 뷰 컨트롤러의 뷰로 설정합니다.
+        view = profileView
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+

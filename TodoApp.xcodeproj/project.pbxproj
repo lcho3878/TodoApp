@@ -10,6 +10,7 @@
 		154100CE2ABA7B3D00828CB3 /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154100CD2ABA7B3D00828CB3 /* ProfilePageViewModel.swift */; };
 		154100D02ABA7B4200828CB3 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154100CF2ABA7B4200828CB3 /* ProfileModel.swift */; };
 		154100D22ABA905F00828CB3 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154100D12ABA905F00828CB3 /* ProfilePageView.swift */; };
+		154100E72ABC623600828CB3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 154100E62ABC623600828CB3 /* Alamofire */; };
 		154E3BA92AB8745C00E2312E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E3BA82AB8745C00E2312E /* AppDelegate.swift */; };
 		154E3BAB2AB8745C00E2312E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E3BAA2AB8745C00E2312E /* SceneDelegate.swift */; };
 		154E3BAD2AB8745C00E2312E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E3BAC2AB8745C00E2312E /* MainViewController.swift */; };
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				154E3BEA2AB97F8900E2312E /* SnapKit in Frameworks */,
+				154100E72ABC623600828CB3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +186,7 @@
 			name = TodoApp;
 			packageProductDependencies = (
 				154E3BE92AB97F8900E2312E /* SnapKit */,
+				154100E62ABC623600828CB3 /* Alamofire */,
 			);
 			productName = TodoApp;
 			productReference = 154E3BA52AB8745C00E2312E /* TodoApp.app */;
@@ -197,7 +200,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					154E3BA42AB8745C00E2312E = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -215,6 +218,7 @@
 			mainGroup = 154E3B9C2AB8745C00E2312E;
 			packageReferences = (
 				154E3BE82AB97F8900E2312E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				154100E52ABC623600828CB3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 154E3BA62AB8745C00E2312E /* Products */;
 			projectDirPath = "";
@@ -326,6 +330,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -386,6 +391,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -482,6 +488,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		154100E52ABC623600828CB3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
 		154E3BE82AB97F8900E2312E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -493,6 +507,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		154100E62ABC623600828CB3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 154100E52ABC623600828CB3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		154E3BE92AB97F8900E2312E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 154E3BE82AB97F8900E2312E /* XCRemoteSwiftPackageReference "SnapKit" */;

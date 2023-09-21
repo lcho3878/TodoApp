@@ -7,12 +7,17 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var mainImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         LoadTask()
+        NewworkImageLoad()
     }
     
     @IBAction func profileDesignButton(_ sender: Any) {
@@ -32,6 +37,21 @@ class MainViewController: UIViewController {
            print(error.localizedDescription)
         }
     }
+    
+    func NewworkImageLoad () {
+        let imageUrl = "https://spartacodingclub.kr/css/images/scc-og.jpg"
+        AF.request(imageUrl).response { response in
+            switch response.result {
+            case .success(let data):
+                DispatchQueue.main.async{
+                    self.mainImageView.image = UIImage(data: data!)
+                }
+            case .failure(let error):
+                print("이미지 로드 실패 : \(error)")
+            }
+        }
+    }
+    
 
 }
 

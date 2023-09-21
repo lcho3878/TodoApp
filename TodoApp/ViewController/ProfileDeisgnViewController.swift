@@ -7,12 +7,51 @@
 
 import UIKit
 import SnapKit
+import Photos
 
 class ProfileDesignViewController: UIViewController{
     
+    var fetchResult: PHFetchResult<PHAsset>!
+    let imageManager: PHCachingImageManager = PHCachingImageManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkAuthAndLoadData()
         ConfigureUI()
+    }
+    
+    func getPhotosFromIPhone() {
+        let collctionList: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+        guard let assetCollection = collctionList.firstObject else { print("사진이 없음")
+            return
+        }
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        self.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: fetchOptions)
+    }
+    
+    func checkAuthAndLoadData() {
+        let photoLibraryAuthrizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoLibraryAuthrizationStatus{
+        case .authorized:
+            self.getPhotosFromIPhone()
+        case .denied:
+            print("접근이 제한됨")
+        case .notDetermined:
+            print("아직 허가 결정 내리지 않음")
+            PHPhotoLibrary.requestAuthorization { (status) in
+                switch status{
+                case .authorized:
+                    self.getPhotosFromIPhone()
+                case .denied:
+                    print("접근이 제한됨")
+                default:
+                    break
+                }
+            }
+        default:
+            print("예외상황발생")
+        }
     }
     
     func ConfigureUI () {
@@ -368,23 +407,23 @@ let pics = [UIImage(named: "picture-1"),
 
 extension ProfileDesignViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pics.count
+        return fetchResult?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .black
-        let picture = pics[indexPath.row]
         let imageview = UIImageView()
-        imageview.image = picture
         cell.addSubview(imageview)
         imageview.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
         }
+        let asset: PHAsset = fetchResult.object(at: indexPath.row)
+        imageManager.requestImage(for: asset, targetSize: .zero, contentMode: .aspectFill, options: nil){
+            (image, _) in
+            imageview.image = image
+        }
         return cell
+        
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.bounds.width/3.5, height: collectionView.bounds.width/3.5)
-//    }
+
 }

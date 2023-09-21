@@ -102,6 +102,7 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         let alert = UIAlertController(title: "수정 및 삭제", message: nil, preferredStyle: .alert)
         alert.addTextField{ textField in
             textField.placeholder = taskList?[indexPath.row].title
+            textField.clearButtonMode = .whileEditing
         }
         let ok = UIAlertAction(title: "수정하기", style: .default, handler: { ok in
             taskList?[indexPath.row].title = alert.textFields?[0].text

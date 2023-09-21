@@ -33,6 +33,12 @@ class TodoCell: UITableViewCell {
         titleLabel.text = task.title
         createDateLabel.text = task.createDate?.toString("y년 M월 d일 h시 m분 생성")
         modifyDateLabel.text = task.modifyDate?.toString("y년 M월 d일 h시 m분 수정")
+//        if let category = task.toCategory {
+//            let categoryName = category.category // "category"는 "Category" 엔터티의 속성 이름
+//            modifyDateLabel.text = categoryName
+//        } else {
+//            modifyDateLabel.text = "No category"
+//        }
 //        if task.isComplete == true {
 //            completeSwitch.isOn = true
 //        }

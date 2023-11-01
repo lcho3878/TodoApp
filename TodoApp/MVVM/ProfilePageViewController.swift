@@ -19,6 +19,19 @@ class ProfilePageViewController: UIViewController {
         
         // ProfilePageView를 뷰 컨트롤러의 뷰로 설정합니다.
         view = profileView
+        profileView.myButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        profileView.printButton.addTarget(self, action: #selector(printButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func buttonTapped() {
+        // 버튼이 눌렸을 때 ViewModel을 통해 이름을 변경
+        let rename = profileView.myTextField.text ?? ""
+        profileView.viewModel?.updateNameToKimChanHo(name: rename)
+    }
+    
+    @objc func printButtonTapped() {
+        // 버튼이 눌렸을 때 ViewModel을 통해 이름을 변경
+        print(profileView.viewModel?.name)
     }
 }
 

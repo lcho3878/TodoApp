@@ -22,8 +22,9 @@ class MainViewController: UIViewController {
     
     @IBAction func profileDesignButton(_ sender: Any) {
         guard let profileDesignViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileDesign") else {return}
-        profileDesignViewController.modalPresentationStyle = .fullScreen
-        present(profileDesignViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(profileDesignViewController, animated: true)
+//        profileDesignViewController.modalPresentationStyle = .fullScreen
+//        present(profileDesignViewController, animated: true, completion: nil)
     }
     
     

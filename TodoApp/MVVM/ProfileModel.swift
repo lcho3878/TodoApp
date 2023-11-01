@@ -8,6 +8,6 @@
 import Foundation
 
 struct ProfileModel {
-    let name: String
+    var name: String
     let age: Int
 }

@@ -34,6 +34,8 @@
 		154E3BEC2AB97FFA00E2312E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E3BEB2AB97FFA00E2312E /* MyCollectionViewCell.swift */; };
 		154E3BEE2AB9B22F00E2312E /* ProfilePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154E3BED2AB9B22F00E2312E /* ProfilePage.storyboard */; };
 		154E3BF12AB9B2A100E2312E /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E3BF02AB9B2A100E2312E /* ProfilePageViewController.swift */; };
+		15B0F6C42AF2237E0072457C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 15B0F6C32AF2237E0072457C /* .gitignore */; };
+		15B0F6C82AF223AB0072457C /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0F6C72AF223AB0072457C /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		154E3BEB2AB97FFA00E2312E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		154E3BED2AB9B22F00E2312E /* ProfilePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfilePage.storyboard; sourceTree = "<group>"; };
 		154E3BF02AB9B2A100E2312E /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		15B0F6C32AF2237E0072457C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		15B0F6C72AF223AB0072457C /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				154E3BA82AB8745C00E2312E /* AppDelegate.swift */,
 				154E3BAA2AB8745C00E2312E /* SceneDelegate.swift */,
 				154E3BDA2AB9440400E2312E /* Instances.swift */,
+				15B0F6C72AF223AB0072457C /* Secret.swift */,
 				154E3BD92AB9421A00E2312E /* Extension */,
 				154E3BCA2AB91DCE00E2312E /* ViewController */,
 				154E3BCB2AB91DD800E2312E /* Storyboard */,
@@ -109,6 +114,7 @@
 				154E3BB62AB8745D00E2312E /* LaunchScreen.storyboard */,
 				154E3BB92AB8745D00E2312E /* Info.plist */,
 				154E3BB12AB8745C00E2312E /* Task.xcdatamodeld */,
+				15B0F6C32AF2237E0072457C /* .gitignore */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B0F6C42AF2237E0072457C /* .gitignore in Resources */,
 				154E3BB82AB8745D00E2312E /* LaunchScreen.storyboard in Resources */,
 				154E3BCD2AB91DEA00E2312E /* TodoPage.storyboard in Resources */,
 				154E3BE52AB97D3B00E2312E /* ProfileDesign.storyboard in Resources */,
@@ -260,6 +267,7 @@
 				154E3BD62AB92ED700E2312E /* CreateViewController.swift in Sources */,
 				154E3BD82AB941DE00E2312E /* Date.swift in Sources */,
 				154E3BEC2AB97FFA00E2312E /* MyCollectionViewCell.swift in Sources */,
+				15B0F6C82AF223AB0072457C /* Secret.swift in Sources */,
 				154100D02ABA7B4200828CB3 /* ProfileModel.swift in Sources */,
 				154E3BAD2AB8745C00E2312E /* MainViewController.swift in Sources */,
 				154E3BF12AB9B2A100E2312E /* ProfilePageViewController.swift in Sources */,
